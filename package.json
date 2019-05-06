@@ -21,6 +21,7 @@
   "scripts": {
     "test": "make lint test sanity-checks",
     "start": "./node_modules/.bin/electron .",
+    "postshrinkwrap": "node ./scripts/clean-shrinkwrap.js",
     "configure": "node-gyp configure",
     "build": "node-gyp build",
     "install": "node-gyp rebuild",
@@ -32,6 +33,10 @@
   },
   "author": "Balena Inc. <hello@etcher.io>",
   "license": "Apache-2.0",
+  "platformSpecificDependencies": [
+    "fsevents",
+    "winusb-driver-generator"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "angular": "1.7.6",
